@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* *{
+        background-color: black;
+    } */
+    body{
+        background-image: url('/E-panchayat/images/admin14.jpg');
+        background-repeat: no-repeat;
+        /* background-color: black; */
+        /* height: 1200px;
+        width:900px; */
+        /* background-position:0rem; */
+        /* background-size: auto;
+        background-attachment: fixed;
+        background-blend-mode: ; */
+    }
+    form{
+        height: 500px;
+        width: 700px;
+        background-color:lightslategray;
+        opacity: 0.5;
+        margin-left:300px;
+        margin-top: 150px;
+        padding-top:60px;
+      
+    }
+    label{
+        font-family: cursive;
+        font-size: 40px;
+        padding-left:100px;
+        padding-top: 500px;
+        /* margin-left: 60px; */
+      
+    }
+    input{
+        height: 30px;
+        width: 250px;
+       
+       background-color: rgb(143, 159, 175);
+      
+       font-size:25px;
+       font-family: century;
+        border-top-style: none;
+        border-bottom-style: double;
+        border-left-style: none;
+        border-right-style: none;
+        color: black;
+        margin-left: 30px;
+
+    }
+    #but{
+        color: white;
+        background-color: black;
+        font-family: cursive;
+        font-size: 30px;
+        height: 70px;
+        margin-top: 70px;
+        margin-left: 230px;
+    }
+    p{
+        font-family: cursive;
+        font-size: 40px;
+    }
+    .head{
+        padding-left: 230px;
+        margin-top: 10px;
+    }
+    #Username{
+        margin-left: 30px;
+    }
+    #pwd{
+        margin-left:64px;
+    }
+</style>
+<body>
+    <form name="myform" method="post" >
+        <div class="head">
+        <p>Admin Login</p>
+        </div>
+        <div class="form">
+        <label for="Username">User Name</label>
+        <input type="text" name="Username" id="Username" placeholder="Enter your Username"><br>
+        <label for="pwd">Password</label>
+        <input type="password" name="pwd" id="pwd" placeholder="Enter password"><br>
+        <input type="button" value="Submit" id="but" onclick="another()">
+        </div>
+    </form>
+    
+</body>
+<script>
+     const Username="admin";
+       const pwd="admin";
+         
+        function another() {
+            var Username=document.myform.Username.value;
+            var pwd=document.myform.pwd.value;
+            if (Username==null || Username=="" || Username!="admin"){
+             alert("Invalid Username")
+             return false;
+           }  
+          else if (pwd==null || pwd=="" || pwd!="admin"){
+          alert("Invalid password")
+          return false;
+           } 
+           else{
+               alert("Login Success");
+           }
+           
+           window.location.href="./complaintform.html";
+           
+        }
+</script>
+</html>

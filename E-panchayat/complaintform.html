@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+</head>
+<style>
+    body{
+        background-image: url('/E-panchayat/images/comp1.jpeg');
+        background-repeat: no-repeat;
+        height:100vh;
+        width:100vw;
+    }
+    form{
+        margin-left: 400px;
+        padding-top: 150px;
+    }
+    label{
+        font-size: 30px;
+        color: white;
+        padding-left: 70px;
+    }
+    input{
+        height:30px;
+        width:300px;
+        background-color: black;
+        opacity: 0.7;
+        color:white;
+        font-size: 19px;
+        font-family: century;
+        border-top-style: none;
+        border-bottom-style: double;
+        border-left-style: none;
+        border-right-style: none;
+        
+
+        /* padding-left: 100px; */
+        
+        /* padding-right: 200px; */
+    }
+    textarea{
+        background-color: black;
+        opacity: 0.7;
+        color:white;
+        font-size: 18px;
+        font-family: century;
+        border-top-style: none;
+        border-bottom-style: double;
+        border-left-style: none;
+        border-right-style: none;
+
+    }
+    #sub,#res{
+        background-color: ivory;
+        color: black;
+       
+    }
+    /* #res:hover{
+        background-color: black;
+        color: wheat;
+
+    }
+    #sub:hover{
+        background-color: black;
+        color: wheat;
+
+
+    } */
+    #name{
+        margin-left: 350px;
+    }
+    #adhn{
+        margin-left: 174px;
+    }
+    #addr{
+        margin-left: 300px;
+    }
+    #phno{
+        margin-left: 163px;
+    }
+    #emailid{
+        margin-left: 303px;
+    }
+    #comp{
+        margin-left: 98px;
+    }
+    #sub{
+        height: 45px;
+        width: 100px;
+        margin-top: 60px;
+        margin-left: 100px;
+    }
+    #res{
+        height: 45px;
+        width: 100px;
+        margin-left: 250px;
+}
+form{
+    margin-left: 700px;
+    margin-top: 25px;
+    background-color: black;
+    height:700px;
+    width:1000px;
+    opacity:0.6;
+}
+.one{
+    color: white;
+    /* padding-top: 10px; */
+
+}
+
+
+</style>
+<body>
+    
+    
+        <form name="myform" method="post" action="complaint.php"
+         onsubmit="return validateform()">
+
+
+        <!-- <p id="one">COMPLAINT FORM</p> -->
+        <label for="name">NAME</label>
+        <input type="text" id="name" name="name" placeholder="Enter your Name"><br><br>
+        <label for="adhn">AADHAR NUMBER</label>
+        <input type="tel" id="adhn" name="adhn" placeholder="Aadhar number" maxlength="10"><br><br>
+        
+        <label for="addr">ADDRESS</label>
+        <textarea id="addr" name="addr" rows="4" cols="50" placeholder="Enter Address"></textarea><br><br>
+        <label for="phno">CONTACT NUMBER</label>
+        <input type="tel" id="phno" name="phno" placeholder="Enter Contact number" maxlength="10"><br><br>
+        <label for="emailid">EMAIL-ID</label>
+        <input type="email" id="emailid" name="emailid" placeholder="Ente Email-id "><br><br>
+        <label for="comp">REGISTER COMPLAINTS</label>
+        <textarea id="comp" name="comp" rows="4" cols="50" placeholder="Register Complaints"></textarea><br><br>
+        <input type="submit" id="sub" name="sub" value="SUBMIT">
+        <input type="reset" id="res" name="res" value="RESET">
+
+    </form>
+
+    <script>
+        function validateform(){
+        var name=document.myform.name.value;
+        var adhn=document.myform.adhn.value;
+        var addr=document.myform.addr.value;
+        var phno=document.myform.phno.value;
+        var x=document.myform.emailid.value;
+        var atpos=x.indexOf("@");
+        var dotpos=x.lastIndexOf(".");
+         var comp=document.myform.comp.value;
+if (name==null || name==""){
+alert("Enter your name");
+return false;
+}
+
+if(comp==null || comp=="")
+{
+alert("Enter complaint");
+return false;
+}
+
+if(addr==null || addr==""){
+alert("Enter your address");
+return false;
+}
+
+if(phno==null || phno=="" || phno.length!=10 || isNaN(phno) || phno.typeof!=number){
+alert("Enter a valid phone number");
+return false;
+}
+
+if(x==null || x=="" || atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+{
+alert("Enter valid email id");
+return false;
+}
+
+if(adhn==null || adhn=="" || adhn.length!=12 ||
+isNan(adhn)){
+alert("Please enter a valid aadhar number");
+return false;
+}
+// prompt("Your response have been successfully recorded");
+return true;
+// window.location.href="./homepage.html";
+
+        }
+       
+
+    </script>
+</body>
+</html>
